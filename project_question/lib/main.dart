@@ -9,7 +9,6 @@ class PerguntaAppState extends State<PerguntaApp> {
     setState(() {
       perguntaSelecionada++;
     });
-    print(perguntaSelecionada);
   }
 
   @override
