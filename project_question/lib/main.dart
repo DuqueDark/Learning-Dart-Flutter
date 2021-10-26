@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
+import './result.dart';
+import './quiz.dart';
 
 main() => runApp(const PerguntaApp());
 
@@ -15,6 +15,7 @@ class PerguntaApp extends StatefulWidget {
 
 class _PerguntaAppState extends State<PerguntaApp> {
   var _questSelect = 0;
+
   final List<Map<String, dynamic>> _question = [
     {
       'question': 'Qual minha cor favorita?',
@@ -38,34 +39,44 @@ class _PerguntaAppState extends State<PerguntaApp> {
       'answer': [
         'MC book',
         'Notebok Sunsung',
-        'Desktop personalizado',
+        'Desktop Montado',
         'Notebook Lenovo'
       ]
     }
   ];
 
+  bool get questionAlreadySelected {
+    return _questSelect < _question.length;
+  }
+
   void _respond() {
-    setState(() {
-      _questSelect++;
-    });
+    if (questionAlreadySelected) {
+      setState(() {
+        _questSelect++;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Perguntas'),
         ),
-        body: Column(
-          children: <Widget>[
-            Question(_question[_questSelect]['question']),
-            Answer(_question[_questSelect]['answer'][0], _respond),
-            Answer(_question[_questSelect]['answer'][1], _respond),
-            Answer(_question[_questSelect]['answer'][2], _respond),
-            Answer(_question[_questSelect]['answer'][3], _respond),
-          ],
-        ),
+        body: questionAlreadySelected
+            ? Quiz(
+                question: _question,
+                questSelect: _questSelect,
+                respond: _respond,
+              )
+            : const Result(),
       ),
     );
   }
