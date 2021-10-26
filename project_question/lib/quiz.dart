@@ -17,17 +17,19 @@ class Quiz extends StatelessWidget {
 
   final List<Map<String, dynamic>> question;
   final int questSelect;
-  final void Function() respond;
+  final void Function(int) respond;
 
   @override
   Widget build(BuildContext context) {
-    List<String> listAnswer =
+    List<Map<String, dynamic>> listAnswer =
         questionAlreadySelected ? question[questSelect]['answer'] : [];
 
     return Column(
       children: <Widget>[
         Question(question[questSelect]['question']),
-        ...listAnswer.map((t) => Answer(t, respond)).toList(),
+        ...listAnswer
+            .map((t) => Answer(t['texto'], () => respond(t['nota'])))
+            .toList(),
       ],
     );
   }
