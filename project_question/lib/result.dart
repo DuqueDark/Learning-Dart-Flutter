@@ -13,7 +13,7 @@ class Result extends StatelessWidget {
       children: <Widget>[
         Center(
           child: Text(
-            "Parabéns!!\nNota $_fullGrade",
+            "Parabéns\nNota $_fullGrade",
             style: const TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
