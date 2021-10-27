@@ -98,7 +98,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Perguntas ${_questSelect + 1}"),
+          title: questionAlreadySelected
+              ? Text("Perguntas ${_questSelect + 1}")
+              : const Text("Pontuação"),
         ),
         body: questionAlreadySelected
             ? Quiz(

@@ -6,6 +6,20 @@ class Result extends StatelessWidget {
   final int _fullGrade;
   final void Function() _reset;
 
+  String get resultMessage {
+    if (_fullGrade > 18) {
+      return "Nivel Challenger\n$_fullGrade";
+    } else if (_fullGrade > 14) {
+      return "Nivel Mestre\n$_fullGrade";
+    } else if (_fullGrade > 10) {
+      return "Nivel Diamond\n$_fullGrade";
+    } else if (_fullGrade > 6) {
+      return "Nivel Gold\n$_fullGrade";
+    } else {
+      return "Nivel Ferro\n$_fullGrade";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,7 +27,7 @@ class Result extends StatelessWidget {
       children: <Widget>[
         Center(
           child: Text(
-            "Parabéns\nNota $_fullGrade",
+            resultMessage,
             style: const TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
