@@ -1,4 +1,4 @@
-# Learning-Dart-Flutter
+# <img align="center" alt="flutter-icon" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">Learning-Dart-Flutter 
 ### Aprendendo o framework flutter
 
 cada projeto é um inicio diferente, sempre melhorando apartir do anterior e adicionando conceitos como,
