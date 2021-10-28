@@ -11,7 +11,8 @@ Obs  .: Apos cada projeto for adicionado colocarei todas as tecnologias usadas c
 
 ## 1° Project Name: Question-Project
 ```
-    O projeto construido foi um app de perguntas e respostas com putações e mensagens personalizadas Conceitos aprendidos 
+    O projeto construido foi um app de perguntas e respostas com putações e mensagens 
+    personalizadas Conceitos aprendidos 
         * Widget 
         * state 
         * comunicação de forma direta e indireta 
