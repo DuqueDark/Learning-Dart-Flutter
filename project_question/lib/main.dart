@@ -33,7 +33,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
         {'texto': 'Cachorro', 'nota': 3},
         {'texto': 'Gato', 'nota': 4},
         {'texto': 'Cobra', 'nota': 2},
-        {'texto': 'Hamister', 'nota': 1},
+        {'texto': 'Hampter', 'nota': 1},
       ]
     },
     {
